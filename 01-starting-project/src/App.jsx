@@ -1,49 +1,25 @@
 
-import imagePath from './assets/react-core-concepts.png'
-import componentsImg from './assets/components.png'
+
+
 import { CORE_CONCEPTS } from './data.js';
-const reactDesc = ['Fundamental','Cruial','Core'];
+import { CoreConcept } from './components/CoreConcept.jsx';
+import { Header } from './components/Header.jsx';
+import TabButton from './components/TabButton.jsx';
 
 
-function genRandomInt(max){
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header(){
-
-  const reactDescription = reactDesc[genRandomInt(2)];
-  return (<header>
-    <img src={imagePath} alt="Stylized atom" />
-    <h1>React Essentials</h1>
-    <p>
-      {reactDescription} React concepts you will need for almost any app you are
-      going to build!
-    </p>
-  </header>);
-}
-
-/*
-function CoreConcept(props){
-  return(
-    <li>
-      <img src={props.image} alt={props.title}></img>
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-*/
-  function CoreConcept({image,title,description}){
-    return(
-      <li>
-        <img src={image} alt={title}></img>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </li>
-    );
 
 
-}
+
 function App() {
+
+  let selectedcontent = "Please click a button."
+  function handleonSelect(onselected){
+    selectedcontent = onselected;
+    console.log(onselected);
+  }
+  
+  console.log("App Component Rendering");
+  
   return (
     <div>
      <Header/>
@@ -62,6 +38,17 @@ function App() {
            <CoreConcept {...CORE_CONCEPTS[3]}/>
         </ul>
         </section>
+        <section id="examples">
+           <h2>Examples</h2>
+           <menu>           
+            <TabButton onSelect={() => handleonSelect('components')}>Components</TabButton>
+            <TabButton onSelect={() => handleonSelect('jsx')}>JSX</TabButton>
+            <TabButton onSelect={() => handleonSelect('props')}>Props</TabButton>
+            <TabButton onSelect={() => handleonSelect('state')}>State</TabButton>
+           </menu>
+          {selectedcontent}
+        </section>
+  
       
       </main>
     </div>
