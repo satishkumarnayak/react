@@ -1,14 +1,15 @@
 
 import imagePath from '../assets/react-core-concepts.png'
+
 import './Header.css'
 
 const reactDesc = ['Fundamental','Cruial','Core'];
 
-export function genRandomInt(max){
+function genRandomInt(max){
     return Math.floor(Math.random() * (max + 1));
   }
   
- export function Header(){
+ export default function Header(){
   
     const reactDescription = reactDesc[genRandomInt(2)];
     return (<header>

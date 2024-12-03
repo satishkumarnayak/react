@@ -1,7 +1,7 @@
 
 
 
-// import componentsImg from '../assets/components.png'
+// 
 
 
 /*
@@ -14,7 +14,7 @@ export function CoreConcept(props){
     </li>
   );
 */
-export function CoreConcept({image,title,description}){
+export default function CoreConcept({image,title,description}){
     return(
       <li>
         <img src={image} alt={title}></img>
