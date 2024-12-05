@@ -45,7 +45,7 @@ function App() {
       const updatedItems = [...prevShoppingCart.items];
       const updatedItemIndex = updatedItems.findIndex(
         (item) => item.id === productId
-      );
+      ); 
 
       const updatedItem = {
         ...updatedItems[updatedItemIndex],
@@ -63,21 +63,19 @@ function App() {
         items: updatedItems,
       };
     });
-  }
+  } 
 
   const ctxValue = {
     items:shoppingCart.items,
-    addItemToCart: handleAddItemToCart
+    addItemToCart: handleAddItemToCart,
+    updateCart : handleUpdateCartItemQuantity
   };
 
   return (
      
  
    <CartContext.Provider value={ctxValue}> 
-      <Header
-        cart={shoppingCart}
-        onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
-      />
+      <Header/>
       <Shop onAddItemToCart={handleAddItemToCart} />
   
     </CartContext.Provider>
