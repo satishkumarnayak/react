@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div id="game-container">
-      <ol id="players" className="hightlight-player">
+      <ol id="players" className="highlight-player">
         <Player intitalName="Player 1" symbol="X" isActive={activePlayer === 'X'}></Player>
         <Player intitalName="Player 2" symbol="O" isActive={activePlayer === 'O'}></Player>
       </ol>
