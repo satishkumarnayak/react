@@ -16,7 +16,7 @@ export default function AvailablePlaces({ onSelectPlace }) {
     async function fetchPlaces(){
 
       try {
-      const response = await fetch('http://localhost:3000/placesBAD');
+      const response = await fetch('http://localhost:3000/places');
       const resData = await response.json();
 
       if(!response.ok) {
