@@ -1,11 +1,20 @@
+import { useRef } from "react";
 
 
 export default function Login() {
+
+  const email = useRef();
+  const password = useRef();
 
 
   function handleSubmit(event){
     event.preventDefault();
     console.log("Submitted!!!");
+
+    const emailEntered = email.current.value;
+    const passwordEntered = password.current.value;
+
+    console.log(emailEntered,passwordEntered);
 
   }
 
@@ -16,12 +25,12 @@ export default function Login() {
       <div className="control-row">
         <div className="control no-margin">
           <label htmlFor="email">Email</label>
-          <input id="email" type="email" name="email" />
+          <input id="email" type="email" name="email" ref={email}/>
         </div>
 
         <div className="control no-margin">
           <label htmlFor="password">Password</label>
-          <input id="password" type="password" name="password" />
+          <input id="password" type="password" name="password" ref={password} />
         </div>
       </div>
 
